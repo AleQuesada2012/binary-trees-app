@@ -92,19 +92,56 @@ namespace BinaryTreeApp
             return tmp;
         }
 
-        public String PreOrder()
+        public string PreOrder()
         {
-            return PreOrder(this.root);
+            string value = "";
+            return PreOrder(this.root, value);
         }
-        private String PreOrder(BTNode node)
+        private string PreOrder(BTNode node, string value)
         {
-            String value = "";
             if (node != null)
             {
-                value =  value + node.GetData();
-                value = value + PreOrder(node.GetLeft());
-                value = value + PreOrder(node.GetRight());
+                value += node.GetData()+" ";
+                PreOrder(node.GetLeft(), value);
+                PreOrder(node.GetRight(), value);
             }
+            return value;
+        }
+
+        public string InOrder()
+        {
+            string value = "";
+            return InOrder(this.root, value);
+        }
+
+        private string InOrder(BTNode node, string value)
+        {
+            if (node != null)
+            {
+                InOrder(node.GetLeft(), value);
+                value += node.GetData()+" ";
+                InOrder(node.GetRight(), value);
+            }
+
+            return value;
+        }
+        
+        public string PostOrder()
+        {
+            string value = "";
+            return PostOrder(this.root, value);
+        }
+
+        private string PostOrder(BTNode node, string value)
+        {
+            if (node != null)
+            {
+                InOrder(node.GetLeft(), value);
+                InOrder(node.GetRight(), value);
+                value += node.GetData()+" ";
+
+            }
+
             return value;
         }
     }
