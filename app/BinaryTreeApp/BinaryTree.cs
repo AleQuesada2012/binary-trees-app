@@ -136,9 +136,9 @@
             
             string value = "";
             if (node != null) {
-                value += InOrder(node.GetLeft())+" ";
-                value += InOrder(node.GetRight())+" ";
-                value += node.GetData()+" ";
+                value += PostOrder(node.GetLeft());
+                value += PostOrder(node.GetRight());
+                value += node.GetData()+", ";
             }
             return value;
         }
