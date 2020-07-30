@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Runtime.CompilerServices;
-
-namespace BinaryTreeApp {
+﻿namespace BinaryTreeApp {
     public class BTNode
     {
         private int data { get; set; }
