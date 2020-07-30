@@ -178,6 +178,7 @@ namespace BinaryTreeApp
         /// </returns>
         private string PostOrder(BTNode node)
         {
+            
             string value = "";
             if (node != null)
             {
