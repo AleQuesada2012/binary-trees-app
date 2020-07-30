@@ -94,54 +94,52 @@ namespace BinaryTreeApp
 
         public string PreOrder()
         {
-            string value = "";
-            return PreOrder(this.root, value);
+            return PreOrder(this.root);
         }
-        private string PreOrder(BTNode node, string value)
+        private string PreOrder(BTNode node)
         {
+            string value = "";
             if (node != null)
             {
-                value += node.GetData()+" ";
-                PreOrder(node.GetLeft(), value);
-                PreOrder(node.GetRight(), value);
+                value = value + node.GetData()+" ";
+                value = value + PreOrder(node.GetLeft())+" ";
+                value = value + PreOrder(node.GetRight())+" ";
             }
             return value;
         }
 
         public string InOrder()
         {
-            string value = "";
-            return InOrder(this.root, value);
+            return InOrder(this.root);
         }
 
-        private string InOrder(BTNode node, string value)
+        private string InOrder(BTNode node)
         {
+            string value = "";
             if (node != null)
             {
-                InOrder(node.GetLeft(), value);
+                value += InOrder(node.GetLeft())+" ";
                 value += node.GetData()+" ";
-                InOrder(node.GetRight(), value);
+                value += InOrder(node.GetRight())+" ";
             }
-
             return value;
         }
         
         public string PostOrder()
         {
-            string value = "";
-            return PostOrder(this.root, value);
+            return PostOrder(this.root);
         }
 
-        private string PostOrder(BTNode node, string value)
+        private string PostOrder(BTNode node)
         {
+            string value = "";
             if (node != null)
             {
-                InOrder(node.GetLeft(), value);
-                InOrder(node.GetRight(), value);
+                value += InOrder(node.GetLeft())+" ";
+                value += InOrder(node.GetRight())+" ";
                 value += node.GetData()+" ";
 
             }
-
             return value;
         }
     }
