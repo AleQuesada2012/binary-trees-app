@@ -38,6 +38,7 @@ namespace BinaryTreeApp {
                 int toTree =int.Parse(_input.Text);
                 //TODO create insertion method in BST class
                 _tree.Insert(toTree);
+                _input.Text = null;
             };
 
             _preorder.Click += (sender, args) =>
@@ -46,7 +47,8 @@ namespace BinaryTreeApp {
                 _result.Visibility = ViewStates.Visible;
                 _treeText.Visibility = ViewStates.Visible;
                 // TODO code preorder method in BST class
-                _treeText.Text = $"[ {_tree.Preorder} ]";
+                string printedTree = _tree.PreOrder();
+                _treeText.Text = $"[ {printedTree} ]";
             };
 
             _inorder.Click += (sender, args) =>
@@ -55,7 +57,7 @@ namespace BinaryTreeApp {
                 _result.Visibility = ViewStates.Visible;
                 _treeText.Visibility = ViewStates.Visible;
                 // TODO code inorder method in BST class
-                _treeText.Text = $"[ {_tree.Inorder} ]";
+                //_treeText.Text = $"[ {_tree.Inorder} ]";
             };
 
             _postorder.Click += (sender, args) =>
@@ -64,7 +66,7 @@ namespace BinaryTreeApp {
                 _result.Visibility = ViewStates.Visible;
                 _treeText.Visibility = ViewStates.Visible;
                 // TODO code postorder method in BST class
-                _treeText.Text = $"[ {_tree.Postorder} ]";
+                //_treeText.Text = $"[ {_tree.Postorder} ]";
             };
         }
     }
