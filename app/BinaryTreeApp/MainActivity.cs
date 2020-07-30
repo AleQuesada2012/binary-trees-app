@@ -16,6 +16,7 @@ namespace BinaryTreeApp {
         private TextView _result;
         private TextView _treeText;
         private bool _printed;
+        private Toast _toast;
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
@@ -35,10 +36,18 @@ namespace BinaryTreeApp {
             //lambda expressions for button click listeners
             _ins.Click += (sender, args) =>
             {
-                int toTree =int.Parse(_input.Text);
-                //TODO create insertion method in BST class
-                _tree.Insert(toTree);
-                _input.Text = null;
+                if (!string.IsNullOrEmpty(_input.Text))
+                {
+                    int toTree =int.Parse(_input.Text);
+                    _tree.Insert(toTree);
+                    _input.Text = null;
+                }
+                else
+                {
+                    _toast = Toast.MakeText(this, "please type a value first", ToastLength.Short);
+                    _toast.Show();
+                }
+                
             };
 
             _preorder.Click += (sender, args) =>
@@ -46,9 +55,11 @@ namespace BinaryTreeApp {
                 _printed = true;
                 _result.Visibility = ViewStates.Visible;
                 _treeText.Visibility = ViewStates.Visible;
-                // TODO code preorder method in BST class
+                
                 string printedTree = _tree.PreOrder();
-                _treeText.Text = $"[ {printedTree} ]";
+                _treeText.Text = $"[ {printedTree}]";
+                _toast = Toast.MakeText(this, "showing tree in PreOrder traversal", ToastLength.Short);
+                _toast.Show();
             };
 
             _inorder.Click += (sender, args) =>
@@ -56,8 +67,10 @@ namespace BinaryTreeApp {
                 _printed = true;
                 _result.Visibility = ViewStates.Visible;
                 _treeText.Visibility = ViewStates.Visible;
-                // TODO code inorder method in BST class
-                //_treeText.Text = $"[ {_tree.Inorder} ]";
+                string printedTree = _tree.InOrder();
+                _treeText.Text = $"[ {printedTree}]";
+                _toast = Toast.MakeText(this, "showing tree in InOrder traversal", ToastLength.Short);
+                _toast.Show();
             };
 
             _postorder.Click += (sender, args) =>
@@ -65,8 +78,10 @@ namespace BinaryTreeApp {
                 _printed = true;
                 _result.Visibility = ViewStates.Visible;
                 _treeText.Visibility = ViewStates.Visible;
-                // TODO code postorder method in BST class
-                //_treeText.Text = $"[ {_tree.Postorder} ]";
+                string printedTree = _tree.PostOrder();
+                _treeText.Text = $"[ {printedTree}]";
+                _toast = Toast.MakeText(this, "showing tree in PostOrder traversal", ToastLength.Short);
+                _toast.Show();
             };
         }
     }
