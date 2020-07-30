@@ -17,6 +17,11 @@ namespace BinaryTreeApp {
         private TextView _treeText;
         private bool _printed;
         private Toast _toast;
+        
+        /// <summary>
+        /// Method invoked by the app when launching the activity.
+        /// </summary>
+        /// <param name="savedInstanceState"></param>
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
@@ -38,9 +43,17 @@ namespace BinaryTreeApp {
             {
                 if (!string.IsNullOrEmpty(_input.Text))
                 {
-                    int toTree =int.Parse(_input.Text);
-                    _tree.Insert(toTree);
+                    if (!_printed)
+                    {
+                        int toTree =int.Parse(_input.Text);
+                        _tree.Insert(toTree);
+                        _input.Text = null;
+                    }
+                    _tree = new BinaryTree();
+                    int toTree1 =int.Parse(_input.Text);
+                    _tree.Insert(toTree1);
                     _input.Text = null;
+                    _printed = false;
                 }
                 else
                 {
