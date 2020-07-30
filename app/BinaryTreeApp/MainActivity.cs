@@ -52,7 +52,8 @@ namespace BinaryTreeApp {
                     int toTree =int.Parse(_input.Text);
                     _tree.Insert(toTree);
                     _input.Text = null;
-                    _toast = Toast.MakeText(this, $"{_input.Text} inserted successfully", ToastLength.Short);
+                    _toast = Toast.MakeText(this, $"{toTree} inserted successfully", ToastLength.Short);
+                    _toast.Show();
                 }
                 else
                 {
@@ -68,7 +69,7 @@ namespace BinaryTreeApp {
                 // hides the textViews so the user focuses on only inserting methods until commanded to print the tree again.
                 _result.Visibility = ViewStates.Invisible;
                 _treeText.Visibility = ViewStates.Invisible;
-                _treeText.Text = "";
+                _treeText.Text = null;
                 
                 _tree = new BinaryTree();
                 _toast = Toast.MakeText(this, "tree content cleared", ToastLength.Short);
