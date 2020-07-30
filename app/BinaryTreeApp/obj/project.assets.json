@@ -1377,24 +1377,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Alejandro\\.nuget\\packages\\": {},
+    "C:\\Users\\Joe_A\\.nuget\\packages\\": {},
     "C:\\Microsoft\\Xamarin\\NuGet": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\GitProjects\\binary-trees-app\\app\\BinaryTreeApp\\BinaryTreeApp.csproj",
+      "projectUniqueName": "C:\\Users\\Joe_A\\RiderProjects\\binary-trees-app2\\app\\BinaryTreeApp\\BinaryTreeApp.csproj",
       "projectName": "BinaryTreeApp",
-      "projectPath": "C:\\GitProjects\\binary-trees-app\\app\\BinaryTreeApp\\BinaryTreeApp.csproj",
-      "packagesPath": "C:\\Users\\Alejandro\\.nuget\\packages\\",
-      "outputPath": "C:\\GitProjects\\binary-trees-app\\app\\BinaryTreeApp\\obj\\",
+      "projectPath": "C:\\Users\\Joe_A\\RiderProjects\\binary-trees-app2\\app\\BinaryTreeApp\\BinaryTreeApp.csproj",
+      "packagesPath": "C:\\Users\\Joe_A\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Joe_A\\RiderProjects\\binary-trees-app2\\app\\BinaryTreeApp\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet"
       ],
       "configFilePaths": [
-        "C:\\Users\\Alejandro\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Joe_A\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],

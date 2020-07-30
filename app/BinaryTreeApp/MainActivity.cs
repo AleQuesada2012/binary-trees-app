@@ -57,7 +57,9 @@ namespace BinaryTreeApp {
                 _treeText.Visibility = ViewStates.Visible;
                 
                 string printedTree = _tree.PreOrder();
-                _treeText.Text = $"[ {printedTree}]";
+                printedTree = printedTree.Substring(0, printedTree.Length - 2);
+
+                _treeText.Text = $"[{printedTree}]";
                 _toast = Toast.MakeText(this, "showing tree in PreOrder traversal", ToastLength.Short);
                 _toast.Show();
             };
@@ -68,7 +70,9 @@ namespace BinaryTreeApp {
                 _result.Visibility = ViewStates.Visible;
                 _treeText.Visibility = ViewStates.Visible;
                 string printedTree = _tree.InOrder();
-                _treeText.Text = $"[ {printedTree}]";
+                printedTree = printedTree.Substring(0, printedTree.Length - 2);
+
+                _treeText.Text = $"[{printedTree}]";
                 _toast = Toast.MakeText(this, "showing tree in InOrder traversal", ToastLength.Short);
                 _toast.Show();
             };
@@ -79,7 +83,8 @@ namespace BinaryTreeApp {
                 _result.Visibility = ViewStates.Visible;
                 _treeText.Visibility = ViewStates.Visible;
                 string printedTree = _tree.PostOrder();
-                _treeText.Text = $"[ {printedTree}]";
+                printedTree = printedTree.Substring(0, printedTree.Length - 2);
+                _treeText.Text = $"[{printedTree}]";
                 _toast = Toast.MakeText(this, "showing tree in PostOrder traversal", ToastLength.Short);
                 _toast.Show();
             };

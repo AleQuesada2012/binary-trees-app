@@ -101,9 +101,9 @@ namespace BinaryTreeApp
             string value = "";
             if (node != null)
             {
-                value = value + node.GetData()+" ";
-                value = value + PreOrder(node.GetLeft())+" ";
-                value = value + PreOrder(node.GetRight())+" ";
+                value = value + node.GetData()+", ";
+                value = value + PreOrder(node.GetLeft());
+                value = value + PreOrder(node.GetRight());
             }
             return value;
         }
@@ -118,9 +118,9 @@ namespace BinaryTreeApp
             string value = "";
             if (node != null)
             {
-                value += InOrder(node.GetLeft())+" ";
-                value += node.GetData()+" ";
-                value += InOrder(node.GetRight())+" ";
+                value += InOrder(node.GetLeft());
+                value += node.GetData()+", ";
+                value += InOrder(node.GetRight());
             }
             return value;
         }
@@ -135,9 +135,9 @@ namespace BinaryTreeApp
             string value = "";
             if (node != null)
             {
-                value += InOrder(node.GetLeft())+" ";
-                value += InOrder(node.GetRight())+" ";
-                value += node.GetData()+" ";
+                value += PostOrder(node.GetLeft());
+                value += PostOrder(node.GetRight());
+                value += node.GetData()+", ";
 
             }
             return value;
