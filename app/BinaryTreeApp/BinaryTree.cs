@@ -1,76 +1,31 @@
-﻿using System;
-using System.Collections.Concurrent;
-using Android.Sax;
-
-namespace BinaryTreeApp
-{
-    public class BinaryTree
-    {
+﻿namespace BinaryTreeApp {
+    /// <summary>
+    /// this class represents a Binary Search Tree implementation.
+    /// It's node objects are restricted to integer values.
+    /// </summary>
+    public class BinaryTree {
         private BTNode root { get; set; }
 
         public BinaryTree() {
             root = null;
         }
 
-        public bool contains(int data)
-        {
-            return this.contains(data, this.root);
-        }
-
-        private bool contains(int data, BTNode node)
-        {
-            if (node == null)
-            {
-                return false;
-            }
-            else
-            {
-                if (data < node.GetData())
-                {
-                    return contains(data, node.GetLeft());
-                }
-                else if(data > node.GetData())
-                {
-                    return contains(data, node.GetRight());
-                }
-                else
-                {
-                    return true;
-                }
-            }
-        }
-
-        public int getData(int data)
-        {
-            return getData(data, this.root);
-        }
-
-        private int getData(int data, BTNode node)
-        {
-            if (node == null)
-            {
-                return 0;
-            }
-
-            if (data < node.GetData())
-            {
-                return getData(data, node.GetLeft());
-            }
-            else if (data > node.GetData())
-            {
-                return getData(data, node.GetRight());
-            }
-            else
-            {
-                return node.GetData();
-            }
-        }
-
+        /// <summary>
+        /// This method is used to add a new numeric value to a referenced instance
+        /// </summary>
+        /// <param name="data"></param>
         public void Insert(int data)
         {
             this.root = this.Insert(data, this.root);
         }
 
+        /// <summary>
+        /// This is the private Insertion method.
+        /// invoked by the public insert method to simplify the user interaction with inserting operations
+        /// </summary>
+        /// <param name="data">integer value to insert in the BST instance</param>
+        /// <param name="tmp">temporal node reference started as the BST instance's root</param>
+        /// <returns></returns>
         private BTNode Insert(int data, BTNode tmp)
         {
             if (tmp == null)
@@ -180,12 +135,10 @@ namespace BinaryTreeApp
         {
             
             string value = "";
-            if (node != null)
-            {
-                value += PostOrder(node.GetLeft());
-                value += PostOrder(node.GetRight());
-                value += node.GetData()+", ";
-
+            if (node != null) {
+                value += InOrder(node.GetLeft())+" ";
+                value += InOrder(node.GetRight())+" ";
+                value += node.GetData()+" ";
             }
             return value;
         }
